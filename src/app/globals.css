@@ -2,26 +2,248 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── CSS Custom Properties ─────────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFFFF0;
+  --foreground: #4A4036;
+  --gold: #D4AF37;
+  --gold-light: #F0D060;
+  --champagne: #F7E7CE;
+  --pearl: #FBFBF9;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ─── Base ────────────────────────────────────────────────────────────────── */
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
+  overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+}
+
+/* ─── Keyframes ────────────────────────────────────────────────────────────── */
+
+/* Gold shimmer sweep — use on text or border */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Soft warm pulse glow */
+@keyframes warmGlow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
+}
+
+/* Slow ambient float */
+@keyframes ambientFloat {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Particle upward drift */
+@keyframes particleDrift {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.7;
+  }
+
+  80% {
+    opacity: 0.4;
+  }
+
+  100% {
+    transform: translateY(-120px) translateX(var(--drift-x, 8px));
+    opacity: 0;
+  }
+}
+
+/* Inner glow pulse on ornamental elements */
+@keyframes innerGlowPulse {
+
+  0%,
+  100% {
+    box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.08);
+  }
+
+  50% {
+    box-shadow: inset 0 0 40px rgba(212, 175, 55, 0.18);
+  }
+}
+
+/* Light ray fade */
+@keyframes lightRayPulse {
+
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* Marble subtle drift */
+@keyframes marbleDrift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Countdown number tick */
+@keyframes numberFlip {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ─── Utility Classes ─────────────────────────────────────────────────────── */
+
+/* Gold shimmer text */
+.text-shimmer {
+  background: linear-gradient(90deg,
+      #D4AF37 0%,
+      #F7E7CE 30%,
+      #F0D060 50%,
+      #D4AF37 70%,
+      #B8962A 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: goldShimmer 4s linear infinite;
+}
+
+/* Glassmorphism card */
+.glass-luxury {
+  background: rgba(251, 251, 249, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow:
+    0 4px 24px rgba(212, 175, 55, 0.08),
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    inset 0 0 30px rgba(212, 175, 55, 0.04);
+}
+
+/* Glassmorphism form */
+.glass-form {
+  background: rgba(251, 251, 249, 0.45);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  box-shadow:
+    0 8px 32px rgba(212, 175, 55, 0.10),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  animation: innerGlowPulse 5s ease-in-out infinite;
+}
+
+/* Gold gradient border (using outline layer) */
+.border-gold-gradient {
+  position: relative;
+}
+
+.border-gold-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #D4AF37, #F7E7CE, #D4AF37 70%, #B8962A);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Inner glow on ornamental elements */
+.inner-glow {
+  animation: innerGlowPulse 4s ease-in-out infinite;
+}
+
+/* Floating ambient element */
+.float-ambient {
+  animation: ambientFloat 6s ease-in-out infinite;
+}
+
+/* ─── Custom Scrollbar ───────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FBFBF9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #D4AF37, #F7E7CE);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B49020;
+}
+
+/* ─── Selection ─────────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--foreground);
+}
+
+/* ─── Tailwind Layer Utilities ───────────────────────────────────────────── */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .perspective-1200 {
+    perspective: 1200px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
   }
 }
