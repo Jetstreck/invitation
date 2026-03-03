@@ -70,11 +70,11 @@ export default function CoupleSection() {
                                 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground font-light text-balance mb-4"
                                 style={{ letterSpacing: "0.04em" }}
                             >
-                                Raden Rama Surya
+                                Rizaldi Ian Indiarto
                             </h2>
                             <div className="w-16 h-[1px] mb-5" style={{ background: "linear-gradient(90deg, transparent, #D4AF37, transparent)" }} />
                             <p className="font-sans text-xs text-foreground/50 tracking-wider leading-relaxed font-light text-center">
-                                Putra dari Bapak Suryadiningrat<br />& Ibu Ayu Kusuma
+                                Putra dari Bapak Kukuh Budiarto<br />& Ibu Indra
                             </p>
                         </div>
                     </motion.div>
@@ -110,7 +110,7 @@ export default function CoupleSection() {
                                 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground font-light text-balance mb-4"
                                 style={{ letterSpacing: "0.04em" }}
                             >
-                                Dewi Shinta Kirana
+                                Farah Karenina Roosyidah
                             </h2>
                             <div className="w-16 h-[1px] mb-5" style={{ background: "linear-gradient(90deg, transparent, #D4AF37, transparent)" }} />
                             <p className="font-sans text-xs text-foreground/50 tracking-wider leading-relaxed font-light text-center">
