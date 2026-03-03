@@ -36,7 +36,7 @@ export default function RSVP() {
             >
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <p className="font-sans text-[10px] uppercase tracking-[0.5em] text-goldGlow mb-4">Be Our Guest</p>
+                    <p className="font-sans text-[10px] uppercase tracking-[0.5em] text-goldGlow mb-4">Konfirmasi Kehadiran</p>
                     <h2
                         className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground font-light mb-6"
                         style={{ letterSpacing: "0.02em" }}
@@ -45,7 +45,7 @@ export default function RSVP() {
                     </h2>
                     <div className="h-[1px] w-16 mx-auto mb-6" style={{ background: "linear-gradient(90deg, transparent, #D4AF37, transparent)" }} />
                     <p className="font-sans text-sm md:text-base text-foreground/60 tracking-wide font-light">
-                        Kindly respond by October 1st, 2026.
+                        Mohon konfirmasi kehadiran sebelum 1 Oktober 2027.
                     </p>
                 </div>
 
@@ -82,9 +82,9 @@ export default function RSVP() {
                                 >
                                     ꦩ
                                 </motion.span>
-                                <h3 className="font-serif text-3xl text-foreground" style={{ letterSpacing: "0.04em" }}>Thank You</h3>
+                                <h3 className="font-serif text-3xl text-foreground" style={{ letterSpacing: "0.04em" }}>Terima Kasih</h3>
                                 <div className="h-[1px] w-12" style={{ background: "linear-gradient(90deg, transparent, #D4AF37, transparent)" }} />
-                                <p className="font-sans text-sm text-foreground/55 font-light">Your response has been received with gratitude.</p>
+                                <p className="font-sans text-sm text-foreground/55 font-light">Kehadiran dan doa restu Anda sangat berarti bagi kami.</p>
                             </motion.div>
                         ) : (
                             <motion.form
@@ -96,7 +96,7 @@ export default function RSVP() {
                             >
                                 {/* Name field */}
                                 <div className="flex flex-col gap-2">
-                                    <label className="font-sans text-[10px] uppercase tracking-[0.3em] text-foreground/60">Full Name</label>
+                                    <label className="font-sans text-[10px] uppercase tracking-[0.3em] text-foreground/60">Nama Lengkap</label>
                                     <div className="relative">
                                         <input
                                             type="text"
@@ -105,7 +105,7 @@ export default function RSVP() {
                                             onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                                             onFocus={() => setFocusedField('name')}
                                             onBlur={() => setFocusedField(null)}
-                                            placeholder="Enter your full name"
+                                            placeholder="Masukkan nama lengkap Anda"
                                             className="w-full bg-transparent border-b px-0 py-3 text-foreground font-sans focus:outline-none placeholder:text-foreground/25 transition-all duration-500"
                                             style={{
                                                 borderColor: focusedField === 'name' ? 'rgba(212,175,55,0.8)' : 'rgba(212,175,55,0.25)',
@@ -117,11 +117,11 @@ export default function RSVP() {
 
                                 {/* Attendance */}
                                 <div className="flex flex-col gap-4 mt-2">
-                                    <label className="font-sans text-[10px] uppercase tracking-[0.3em] text-foreground/60">Will you attend?</label>
+                                    <label className="font-sans text-[10px] uppercase tracking-[0.3em] text-foreground/60">Apakah Anda akan hadir?</label>
                                     <div className="flex gap-8">
                                         {[
-                                            { value: 'yes', label: 'Joyfully Accept' },
-                                            { value: 'no', label: 'Regretfully Decline' },
+                                            { value: 'yes', label: 'Dengan Senang Hadir' },
+                                            { value: 'no', label: 'Mohon Maaf Berhalangan' },
                                         ].map((opt) => (
                                             <label key={opt.value} className="flex items-center gap-3 cursor-pointer group">
                                                 <div className="relative flex items-center justify-center flex-shrink-0">
@@ -161,15 +161,15 @@ export default function RSVP() {
                                             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                                             className="flex flex-col gap-2"
                                         >
-                                            <label className="font-sans text-[10px] uppercase tracking-[0.3em] text-foreground/60">Number of Guests</label>
+                                            <label className="font-sans text-[10px] uppercase tracking-[0.3em] text-foreground/60">Jumlah Tamu</label>
                                             <select
                                                 value={formState.guests}
                                                 onChange={(e) => setFormState({ ...formState, guests: e.target.value })}
                                                 className="w-full bg-transparent border-b border-goldGlow/30 px-0 py-3 text-foreground font-sans focus:outline-none focus:border-goldGlow/80 transition-colors appearance-none cursor-pointer"
                                                 style={{ borderColor: 'rgba(212,175,55,0.3)' }}
                                             >
-                                                <option value="1">1 Person</option>
-                                                <option value="2">2 Persons</option>
+                                                <option value="1">1 Orang</option>
+                                                <option value="2">2 Orang</option>
                                             </select>
                                         </motion.div>
                                     )}
@@ -187,7 +187,7 @@ export default function RSVP() {
                                         background: "rgba(212,175,55,0.06)",
                                     }}
                                 >
-                                    <span className="relative z-10">Send Response</span>
+                                    <span className="relative z-10">Kirim Konfirmasi</span>
                                     {/* Gold fill slides up on hover */}
                                     <div
                                         className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"

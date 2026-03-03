@@ -2,10 +2,12 @@
 import { motion } from 'framer-motion';
 import FloatingParticles from './FloatingParticles';
 import { blurReveal, staggerContainer, fadeUp } from '@/lib/animations';
+import SectionBackground from './SectionBackground';
 
 export default function ClosingBlessing() {
     return (
         <section className="relative py-40 px-6 min-h-[90vh] bg-ivory flex flex-col items-center justify-center text-center overflow-hidden">
+            <SectionBackground variant="closing" />
 
             {/* Soft ivory-to-champagne gradient fill */}
             <div className="absolute inset-0 bg-gradient-to-b from-ivory via-champagne/10 to-ivory pointer-events-none" />
@@ -57,9 +59,9 @@ export default function ClosingBlessing() {
                     variants={fadeUp}
                     className="font-sans text-sm md:text-base text-foreground/60 leading-loose font-light mb-12 max-w-md"
                 >
-                    It is an honor and happiness for us<br className="hidden md:block" />
-                    if you are willing to attend and give your blessing<br className="hidden md:block" />
-                    to our marriage.
+                    Merupakan kehormatan dan kebahagiaan bagi kami<br className="hidden md:block" />
+                    apabila Bapak/Ibu/Saudara/i berkenan hadir<br className="hidden md:block" />
+                    dan memberikan doa restu kepada kami.
                 </motion.p>
 
                 {/* Animated vertical divider */}
@@ -78,7 +80,7 @@ export default function ClosingBlessing() {
                     className="font-serif text-3xl md:text-5xl text-foreground font-light mb-4 text-balance"
                     style={{ letterSpacing: "0.04em" }}
                 >
-                    Rama &amp; Shinta
+                    Rizaldi & Farah
                 </motion.h3>
 
                 {/* Hashtag */}
@@ -86,7 +88,7 @@ export default function ClosingBlessing() {
                     variants={fadeUp}
                     className="font-sans text-[10px] uppercase tracking-[0.5em] text-goldGlow/50 mt-8"
                 >
-                    #RamaShinta2026
+                    #RizaldiFarah2027
                 </motion.p>
 
                 {/* Bottom Hanacaraka watermark */}

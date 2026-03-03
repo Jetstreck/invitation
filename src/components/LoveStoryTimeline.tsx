@@ -1,28 +1,30 @@
 "use client";
 import { motion } from 'framer-motion';
-import { blurReveal, staggerContainer } from '@/lib/animations';
+import { blurReveal } from '@/lib/animations';
+import SectionBackground from './SectionBackground';
 
 const stories = [
     {
-        year: "2018",
-        title: "First Meeting",
-        description: "We crossed paths at a cultural charity event. A simple conversation about traditional art sparked a connection that would last a lifetime.",
-    },
-    {
         year: "2021",
-        title: "The Friendship",
-        description: "Years of shared laughter, supporting each other's dreams, and discovering that we were looking at the world through the same lens.",
+        title: "Pertemuan Pertama",
+        description: "Kami bertemu di sebuah acara amal budaya. Obrolan sederhana tentang seni tradisional memicu koneksi yang akan bertahan seumur hidup.",
     },
     {
-        year: "2024",
-        title: "The Proposal",
-        description: "Under the golden hour sky, with the blessing of both families, a promise was made to build a future together.",
+        year: "2022",
+        title: "Memulai Hubungan",
+        description: "Bertahun-tahun berbagi tawa, saling mendukung mimpi satu sama lain, dan menyadari bahwa kami memandang dunia melalui lensa yang sama.",
+    },
+    {
+        year: "2027",
+        title: "Lamaran",
+        description: "Di bawah langit senja yang keemasan, dengan restu kedua keluarga, sebuah janji diucapkan untuk membangun masa depan bersama.",
     },
 ];
 
 export default function LoveStoryTimeline() {
     return (
         <section className="relative py-32 px-6 min-h-screen bg-ivory flex flex-col items-center overflow-hidden">
+            <SectionBackground variant="timeline" />
             {/* Ambient glow */}
             <div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
@@ -40,12 +42,12 @@ export default function LoveStoryTimeline() {
                 viewport={{ once: true, margin: "-80px" }}
                 className="text-center mb-24 relative z-10"
             >
-                <p className="font-sans text-[10px] uppercase tracking-[0.5em] text-goldGlow mb-4">Our Journey</p>
+                <p className="font-sans text-[10px] uppercase tracking-[0.5em] text-goldGlow mb-4">Perjalanan Kami</p>
                 <h2
                     className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground font-light text-balance"
                     style={{ letterSpacing: "0.02em" }}
                 >
-                    Love Story
+                    Kisah Cinta
                 </h2>
             </motion.div>
 

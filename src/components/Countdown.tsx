@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface TimeLeft {
     days: number;
@@ -9,62 +9,35 @@ interface TimeLeft {
     seconds: number;
 }
 
-function AnimatedNumber({ value }: { value: number }) {
-    const [displayed, setDisplayed] = useState(value);
-    const [animKey, setAnimKey] = useState(0);
+const TARGET_DATE = new Date("2027-10-24T09:00:00").getTime();
 
-    useEffect(() => {
-        if (value !== displayed) {
-            setAnimKey(k => k + 1);
-            setDisplayed(value);
-        }
-    }, [value]);
-
-    return (
-        <div className="relative overflow-hidden h-[1.2em]">
-            <AnimatePresence mode="popLayout">
-                <motion.span
-                    key={animKey}
-                    className="font-serif text-3xl md:text-5xl text-foreground font-light block"
-                    initial={{ y: -30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: 20, opacity: 0 }}
-                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                >
-                    {displayed.toString().padStart(2, '0')}
-                </motion.span>
-            </AnimatePresence>
-        </div>
-    );
+function calcTimeLeft(): TimeLeft {
+    const diff = TARGET_DATE - Date.now();
+    if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    return {
+        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((diff % (1000 * 60)) / 1000),
+    };
 }
 
 export default function Countdown() {
-    const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+    const [timeLeft, setTimeLeft] = useState<TimeLeft | null>(null);
 
     useEffect(() => {
-        const targetDate = new Date("2026-10-24T09:00:00").getTime();
-        const updateTimer = () => {
-            const now = new Date().getTime();
-            const diff = targetDate - now;
-            if (diff > 0) {
-                setTimeLeft({
-                    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-                    hours: Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-                    minutes: Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)),
-                    seconds: Math.floor((diff % (1000 * 60)) / 1000),
-                });
-            }
-        };
-        updateTimer();
-        const timer = setInterval(updateTimer, 1000);
+        setTimeLeft(calcTimeLeft());
+        const timer = setInterval(() => {
+            setTimeLeft(calcTimeLeft());
+        }, 1000);
         return () => clearInterval(timer);
     }, []);
 
     const blocks = [
-        { label: "Days", value: timeLeft.days },
-        { label: "Hours", value: timeLeft.hours },
-        { label: "Mins", value: timeLeft.minutes },
-        { label: "Secs", value: timeLeft.seconds },
+        { label: "Hari", value: timeLeft?.days },
+        { label: "Jam", value: timeLeft?.hours },
+        { label: "Menit", value: timeLeft?.minutes },
+        { label: "Detik", value: timeLeft?.seconds },
     ];
 
     return (
@@ -85,9 +58,22 @@ export default function Countdown() {
                         boxShadow: "0 4px 20px rgba(212,175,55,0.08), inset 0 0 20px rgba(212,175,55,0.05)",
                     }}
                 >
-                    <AnimatedNumber value={block.value} />
+                    <motion.span
+                        key={block.value}
+                        className="font-serif text-3xl md:text-5xl font-light"
+                        style={{ color: "#1a1a1a", lineHeight: 1.2 }}
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                        {block.value !== undefined
+                            ? block.value.toString().padStart(2, '0')
+                            : '--'}
+                    </motion.span>
+
                     <div className="w-8 h-[1px] my-2" style={{ background: "linear-gradient(90deg, transparent, #D4AF37, transparent)" }} />
-                    <span className="font-sans text-[9px] md:text-[11px] uppercase tracking-[0.25em] text-foreground/50">
+
+                    <span className="font-sans text-[9px] md:text-[11px] uppercase tracking-[0.25em]" style={{ color: "#1a1a1a", opacity: 0.5 }}>
                         {block.label}
                     </span>
 

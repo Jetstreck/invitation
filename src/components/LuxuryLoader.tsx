@@ -86,7 +86,7 @@ export default function LuxuryLoader({ onComplete }: { onComplete: () => void })
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 1 }}
                     >
-                        A Sacred Celebration
+                        Sebuah Perayaan Suci
                     </motion.p>
                 </motion.div>
             ) : null}

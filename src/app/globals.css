@@ -87,6 +87,19 @@ html {
   }
 }
 
+/* Stone dust fall from gate edges during opening */
+@keyframes stoneDustFall {
+  0% {
+    transform: translateY(-8px) translateX(0px);
+    opacity: 0.85;
+  }
+
+  100% {
+    transform: translateY(130px) translateX(var(--dust-x, 5px));
+    opacity: 0;
+  }
+}
+
 /* Inner glow pulse on ornamental elements */
 @keyframes innerGlowPulse {
 

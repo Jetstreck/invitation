@@ -2,31 +2,33 @@
 import { motion } from 'framer-motion';
 import { staggerContainer, blurReveal, cardHover } from '@/lib/animations';
 import Countdown from './Countdown';
+import SectionBackground from './SectionBackground';
 
 const events = [
     {
         title: "Akad Nikah",
-        dayName: "Saturday",
+        dayName: "Sabtu",
         date: "24",
-        month: "October 2026",
+        month: "Oktober 2027",
         time: "09.00 – 11.00 WIB",
-        venue: "Keraton Grand Mosque",
-        address: "Jln. Kebesaran No. 1, Surabaya",
+        venue: "Masjid Agung Tuban",
+        address: "Jln. KH. Mustain No. 1, Tuban, Jawa Timur",
     },
     {
         title: "Resepsi",
-        dayName: "Saturday",
+        dayName: "Sabtu",
         date: "24",
-        month: "October 2026",
+        month: "Oktober 2027",
         time: "18.30 – 22.00 WIB",
-        venue: "Keraton Grand Ballroom",
-        address: "Jln. Kebesaran No. 1, Surabaya",
+        venue: "Grand Ballroom Hotel Santika",
+        address: "Jln. Letjen S. Parman No. 89, Kota Malang, Jawa Timur",
     },
 ];
 
 export default function EventDetail() {
     return (
         <section className="relative py-32 px-6 min-h-screen flex items-center justify-center bg-ivory overflow-hidden">
+            <SectionBackground variant="event" />
             {/* Subtle marble underlay */}
             <div className="absolute inset-0 bg-subtle-marble opacity-[0.12] mix-blend-multiply pointer-events-none" />
 
@@ -48,10 +50,10 @@ export default function EventDetail() {
             >
                 {/* Section header */}
                 <motion.div variants={blurReveal} className="text-center mb-16">
-                    <p className="font-sans text-[10px] uppercase tracking-[0.5em] text-goldGlow mb-4">The Wedding Event</p>
+                    <p className="font-sans text-[10px] uppercase tracking-[0.5em] text-goldGlow mb-4">Acara Pernikahan</p>
                     <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground font-light text-balance"
                         style={{ letterSpacing: "0.02em" }}>
-                        Save The Date
+                        Catat Tanggalnya
                     </h2>
                     <motion.div
                         className="h-[1px] mx-auto mt-8"
@@ -111,7 +113,7 @@ export default function EventDetail() {
 
                 {/* Countdown */}
                 <motion.div variants={blurReveal} className="mt-24 w-full flex flex-col items-center">
-                    <p className="font-sans text-[10px] uppercase tracking-[0.5em] text-foreground/35 mb-8">Time Remaining</p>
+                    <p className="font-sans text-[10px] uppercase tracking-[0.5em] text-foreground/35 mb-8">Hitung Mundur</p>
                     <Countdown />
                 </motion.div>
             </motion.div>

@@ -9,6 +9,8 @@ import Gallery from "@/components/Gallery";
 import LoveStoryTimeline from "@/components/LoveStoryTimeline";
 import RSVP from "@/components/RSVP";
 import ClosingBlessing from "@/components/ClosingBlessing";
+import GiftSection from "@/components/GiftSection";
+import MusicPlayer from "@/components/MusicPlayer";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 
@@ -37,6 +39,7 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-ivory font-sans text-foreground">
+      <MusicPlayer />
 
       {/* ── 1. LuxuryLoader ── */}
       <AnimatePresence>
@@ -71,6 +74,7 @@ export default function Home() {
         <EventDetail />
         <Gallery />
         <LoveStoryTimeline />
+        <GiftSection />
         <RSVP />
         <ClosingBlessing />
       </motion.main>

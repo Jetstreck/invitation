@@ -1,23 +1,14 @@
 "use client";
 import { motion } from 'framer-motion';
-import { staggerContainer, blurReveal, fadeUp, wordReveal } from '@/lib/animations';
+import { staggerContainer, blurReveal, fadeUp } from '@/lib/animations';
+import SectionBackground from './SectionBackground';
 
 export default function CoupleSection() {
-    const people = [
-        {
-            role: "The Groom",
-            name: "Raden Rama Surya",
-            parentLine: "Son of Mr. Suryadiningrat & Mrs. Ayu Kusuma",
-        },
-        {
-            role: "The Bride",
-            name: "Dewi Shinta Kirana",
-            parentLine: "Daughter of Mr. Dananjaya & Mrs. Ratih Permatasari",
-        },
-    ];
+
 
     return (
         <section className="relative py-32 px-6 min-h-screen flex items-center justify-center bg-pearl overflow-hidden">
+            <SectionBackground variant="couple" />
 
             {/* Slow-spinning batik ring — ultra subtle */}
             <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
@@ -56,7 +47,7 @@ export default function CoupleSection() {
                     <p className="font-decorative text-goldGlow/35 text-5xl mb-4 text-shimmer">ꦧꦱꦤ꧀ꦠ</p>
                     <p className="font-sans text-[10px] uppercase tracking-[0.4em] text-foreground/40">Maha Suci Allah</p>
                     <p className="font-sans text-sm mt-5 max-w-md mx-auto text-foreground/60 leading-relaxed font-light">
-                        Who has created creatures in pairs. Ya Allah, please bring us together<br className="hidden md:block" /> in love and blessing.
+                        Yang telah menciptakan makhluk berpasang-pasangan. Ya Allah, pertemukanlah kami<br className="hidden md:block" /> dalam cinta dan ridho-Mu.
                     </p>
                 </motion.div>
 
@@ -74,7 +65,7 @@ export default function CoupleSection() {
                                 style={{ background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.08), transparent)" }}
                             />
 
-                            <span className="font-sans text-[10px] uppercase tracking-[0.5em] text-goldGlow mb-6 block">The Groom</span>
+                            <span className="font-sans text-[10px] uppercase tracking-[0.5em] text-goldGlow mb-6 block">Mempelai Pria</span>
                             <h2
                                 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground font-light text-balance mb-4"
                                 style={{ letterSpacing: "0.04em" }}
@@ -83,7 +74,7 @@ export default function CoupleSection() {
                             </h2>
                             <div className="w-16 h-[1px] mb-5" style={{ background: "linear-gradient(90deg, transparent, #D4AF37, transparent)" }} />
                             <p className="font-sans text-xs text-foreground/50 tracking-wider leading-relaxed font-light text-center">
-                                Son of Mr. Suryadiningrat<br />& Mrs. Ayu Kusuma
+                                Putra dari Bapak Suryadiningrat<br />& Ibu Ayu Kusuma
                             </p>
                         </div>
                     </motion.div>
@@ -114,7 +105,7 @@ export default function CoupleSection() {
                                 style={{ background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.08), transparent)" }}
                             />
 
-                            <span className="font-sans text-[10px] uppercase tracking-[0.5em] text-goldGlow mb-6 block">The Bride</span>
+                            <span className="font-sans text-[10px] uppercase tracking-[0.5em] text-goldGlow mb-6 block">Mempelai Wanita</span>
                             <h2
                                 className="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground font-light text-balance mb-4"
                                 style={{ letterSpacing: "0.04em" }}
@@ -123,7 +114,7 @@ export default function CoupleSection() {
                             </h2>
                             <div className="w-16 h-[1px] mb-5" style={{ background: "linear-gradient(90deg, transparent, #D4AF37, transparent)" }} />
                             <p className="font-sans text-xs text-foreground/50 tracking-wider leading-relaxed font-light text-center">
-                                Daughter of Mr. Dananjaya<br />& Mrs. Ratih Permatasari
+                                Putri dari Bapak Dananjaya<br />& Ibu Ratih Permatasari
                             </p>
                         </div>
                     </motion.div>

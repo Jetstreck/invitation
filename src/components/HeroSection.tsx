@@ -17,10 +17,10 @@ export default function HeroSection() {
     const textY = useTransform(scrollYProgress, [0, 1], ["0%", "6%"]);
     const orbScale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
 
-    const nameWords = ["Rama", "&", "Shinta"];
+    const nameWords = ["Rizaldi", "&", "Farah"];
 
     return (
-        <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4">
+        <section id="hero" ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 px-4">
 
             {/* ── BG Layer (slowest parallax) ── */}
             <motion.div className="absolute inset-0" style={{ y: bgY }}>
@@ -83,7 +83,7 @@ export default function HeroSection() {
                     viewport={{ once: true, margin: "-80px" }}
                     className="font-sans text-xs md:text-sm tracking-[0.5em] uppercase text-goldGlow/80 mb-8"
                 >
-                    The Wedding Celebration Of
+                    Undangan Pernikahan
                 </motion.p>
 
                 {/* Hero name — per-word stagger */}
@@ -146,13 +146,13 @@ export default function HeroSection() {
                         variants={fadeUp}
                         className="font-sans text-sm md:text-base tracking-[0.35em] text-foreground/60 uppercase"
                     >
-                        Saturday, 24 October 2026
+                        Sabtu, 24 Oktober 2027
                     </motion.p>
                     <motion.p
                         variants={fadeUp}
                         className="font-sans text-sm md:text-base text-foreground/40 tracking-wider font-light"
                     >
-                        Keraton Grand Ballroom · Surabaya
+                        Tuban & Kota Malang · Jawa Timur
                     </motion.p>
                 </motion.div>
 
@@ -176,7 +176,7 @@ export default function HeroSection() {
                     className="mt-16 flex flex-col items-center gap-2"
                 >
                     <span className="font-sans text-[10px] uppercase tracking-[0.4em] font-light text-foreground/30">
-                        Scroll
+                        Gulir
                     </span>
                     <div className="w-[1px] h-10 bg-foreground/10 relative overflow-hidden">
                         <motion.div
