@@ -18,8 +18,7 @@ export default function ClosingBlessing() {
                 style={{
                     width: 600,
                     height: 600,
-                    background: "radial-gradient(circle, rgba(247,231,206,0.5) 0%, transparent 70%)",
-                    filter: "blur(100px)",
+                    background: "radial-gradient(circle, rgba(247,231,206,0.2) 0%, transparent 60%)",
                 }}
             />
 

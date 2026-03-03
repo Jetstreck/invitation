@@ -40,8 +40,7 @@ export default function HeroSection() {
                 <motion.div
                     className="w-[65vw] h-[65vw] max-w-[640px] max-h-[640px] rounded-full"
                     style={{
-                        background: "radial-gradient(circle, rgba(247,231,206,0.55) 0%, rgba(247,231,206,0.2) 40%, transparent 70%)",
-                        filter: "blur(60px)",
+                        background: "radial-gradient(circle, rgba(247,231,206,0.3) 0%, rgba(247,231,206,0.1) 40%, transparent 70%)",
                     }}
                     animate={{ scale: [1, 1.1, 1], opacity: [0.4, 0.65, 0.4] }}
                     transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
@@ -94,15 +93,15 @@ export default function HeroSection() {
                     whileInView="show"
                     viewport={{ once: true, margin: "-80px" }}
                 >
-                    <h1 className="flex flex-col md:flex-row items-center justify-center gap-x-6 gap-y-2 md:gap-y-0 font-serif font-light leading-tight">
+                    <h1 className="flex flex-row items-center justify-center gap-x-3 sm:gap-x-4 md:gap-x-6 font-serif font-light leading-tight whitespace-nowrap">
                         {nameWords.map((word, i) => (
                             <motion.span
                                 key={i}
                                 variants={blurReveal}
                                 className={`
                                     ${word === "&"
-                                        ? "text-shimmer text-5xl md:text-6xl lg:text-7xl italic"
-                                        : "text-5xl md:text-7xl lg:text-9xl text-foreground"
+                                        ? "text-shimmer text-3xl sm:text-5xl md:text-6xl lg:text-7xl italic"
+                                        : "text-4xl sm:text-5xl md:text-7xl lg:text-9xl text-foreground"
                                     }
                                 `}
                                 style={{

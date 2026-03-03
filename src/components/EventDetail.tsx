@@ -36,8 +36,7 @@ export default function EventDetail() {
             <div
                 className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] pointer-events-none"
                 style={{
-                    background: "radial-gradient(ellipse, rgba(247,231,206,0.3) 0%, transparent 70%)",
-                    filter: "blur(80px)",
+                    background: "radial-gradient(ellipse, rgba(247,231,206,0.15) 0%, transparent 60%)",
                 }}
             />
 

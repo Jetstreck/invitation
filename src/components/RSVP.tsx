@@ -22,8 +22,7 @@ export default function RSVP() {
             <div
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
                 style={{
-                    background: "radial-gradient(circle, rgba(247,231,206,0.5) 0%, transparent 70%)",
-                    filter: "blur(100px)",
+                    background: "radial-gradient(circle, rgba(247,231,206,0.3) 0%, transparent 60%)",
                 }}
             />
 
@@ -53,11 +52,11 @@ export default function RSVP() {
                 <div
                     className="relative p-8 md:p-12 border-gold-gradient"
                     style={{
-                        background: "rgba(251,251,249,0.5)",
-                        backdropFilter: "blur(28px)",
-                        WebkitBackdropFilter: "blur(28px)",
+                        background: "rgba(251,251,249,0.7)",
+                        backdropFilter: "blur(8px)",
+                        WebkitBackdropFilter: "blur(8px)",
                         border: "1px solid rgba(212,175,55,0.22)",
-                        boxShadow: "0 8px 40px rgba(212,175,55,0.10), 0 2px 8px rgba(74,64,54,0.05), inset 0 0 40px rgba(212,175,55,0.04)",
+                        boxShadow: "0 8px 30px rgba(212,175,55,0.06), 0 2px 4px rgba(74,64,54,0.02)",
                     }}
                 >
                     {/* Inner frame line */}

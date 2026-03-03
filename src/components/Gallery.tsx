@@ -24,8 +24,7 @@ export default function Gallery() {
             <div
                 className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] pointer-events-none"
                 style={{
-                    background: "radial-gradient(ellipse, rgba(247,231,206,0.25) 0%, transparent 70%)",
-                    filter: "blur(60px)",
+                    background: "radial-gradient(ellipse, rgba(247,231,206,0.15) 0%, transparent 70%)",
                 }}
             />
 
@@ -126,7 +125,7 @@ export default function Gallery() {
                     <motion.div
                         key="lightbox"
                         className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-10 cursor-pointer"
-                        style={{ background: "rgba(248,247,242,0.92)", backdropFilter: "blur(16px)" }}
+                        style={{ background: "rgba(248,247,242,0.96)" }}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -170,10 +169,9 @@ export default function Gallery() {
                                 onClick={() => setLightbox(null)}
                                 className="absolute -top-4 -right-4 w-9 h-9 flex items-center justify-center font-sans text-xs"
                                 style={{
-                                    background: "rgba(251,251,249,0.9)",
+                                    background: "rgba(251,251,249,0.98)",
                                     border: "1px solid rgba(212,175,55,0.35)",
                                     color: "#D4AF37",
-                                    backdropFilter: "blur(8px)",
                                 }}
                             >
                                 ✕

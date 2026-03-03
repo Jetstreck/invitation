@@ -28,11 +28,7 @@ export default function CoupleSection() {
 
             {/* Ambient warm center glow */}
             <div
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
-                style={{
-                    background: "radial-gradient(circle, rgba(247,231,206,0.35) 0%, transparent 70%)",
-                    filter: "blur(80px)",
-                }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none bg-[radial-gradient(circle,rgba(247,231,206,0.15)_0%,transparent_70%)]"
             />
 
             <motion.div

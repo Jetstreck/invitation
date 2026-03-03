@@ -171,26 +171,19 @@ html {
 
 /* Glassmorphism card */
 .glass-luxury {
-  background: rgba(251, 251, 249, 0.55);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(251, 251, 249, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(212, 175, 55, 0.22);
-  box-shadow:
-    0 4px 24px rgba(212, 175, 55, 0.08),
-    0 1px 0 rgba(255, 255, 255, 0.6) inset,
-    inset 0 0 30px rgba(212, 175, 55, 0.04);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.05);
 }
 
-/* Glassmorphism form */
 .glass-form {
-  background: rgba(251, 251, 249, 0.45);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(251, 251, 249, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(212, 175, 55, 0.18);
-  box-shadow:
-    0 8px 32px rgba(212, 175, 55, 0.10),
-    0 1px 0 rgba(255, 255, 255, 0.8) inset;
-  animation: innerGlowPulse 5s ease-in-out infinite;
+  box-shadow: 0 8px 16px rgba(212, 175, 55, 0.06);
 }
 
 /* Gold gradient border (using outline layer) */
