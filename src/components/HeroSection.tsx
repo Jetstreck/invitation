@@ -94,7 +94,7 @@ export default function HeroSection() {
                     whileInView="show"
                     viewport={{ once: true, margin: "-80px" }}
                 >
-                    <h1 className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-serif font-light leading-tight">
+                    <h1 className="flex flex-col md:flex-row items-center justify-center gap-x-6 gap-y-2 md:gap-y-0 font-serif font-light leading-tight">
                         {nameWords.map((word, i) => (
                             <motion.span
                                 key={i}
